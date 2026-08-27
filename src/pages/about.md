@@ -4,6 +4,7 @@ title: About
 members:
   - name: Maryam Hakim
   - name: Muhammad Hakim
+    photo: /muhammad-hakim.webp
   - name: Muhammad Rohim
     photo: /muhammad-rohim.jpg
   - name: Basil Zulkarnain
