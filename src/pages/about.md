@@ -21,7 +21,8 @@ members:
   - name: Jamal Ramadan Uma
   - name: Hurin
   - name: Unaysa
-  - name: Didododi
+  - name: Diya Awang
+    photo: /diya (1).jpg
 ---
 We are MMG — a group of Indonesians and other Asians who were born in Egypt and are now students or residents here. What started as a small circle of friends grew into a community where we hang out, celebrate birthdays, share meals, and learn from each other.
 
