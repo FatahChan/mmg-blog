@@ -8,6 +8,7 @@ members:
   - name: Muhammad Rohim
     photo: /muhammad-rohim.jpg
   - name: Basil Zulkarnein
+    photo: /Basil Zulkarnein_20260827_161853_0000-1.jpg
   - name: Sarah Zulkarnein
     photo: /sarah.jpeg
   - name: Hima Zulkarnein
