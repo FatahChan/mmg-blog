@@ -8,11 +8,12 @@ members:
   - name: Basil Zulkarnain
   - name: Sarah Zulkarnain
   - name: Hima Zulkarnain
+  - name: Aisyah Samweal
   - name: Ahmad Fathallah
     photo: /fatah.jpg
-  - name: Aisyah Samweal
   - name: Salwa
   - name: Hanan Uma
+  - name: Jamal Ramadan Uma
   - name: Hurin
   - name: Unaysa
 ---
