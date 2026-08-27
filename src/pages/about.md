@@ -5,6 +5,7 @@ members:
   - name: Maryam Hakim
   - name: Muhammad Hakim
   - name: Muhammad Rohim
+    photo: /muhammad-rohim.jpg
   - name: Basil Zulkarnain
   - name: Sarah Zulkarnain
     photo: /sarah.jpeg
