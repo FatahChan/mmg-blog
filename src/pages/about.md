@@ -13,6 +13,7 @@ members:
   - name: Muhammad Rohim
   - name: Salwa
   - name: Unaysa
+  - name: Aisyah Samweal
 ---
 We are MMG — a group of Indonesians and other Asians who were born in Egypt and are now students or residents here. What started as a small circle of friends grew into a community where we hang out, celebrate birthdays, share meals, and learn from each other.
 
