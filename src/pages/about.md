@@ -7,10 +7,10 @@ members:
     photo: /muhammad-hakim.webp
   - name: Muhammad Rohim
     photo: /muhammad-rohim.jpg
-  - name: Basil Zulkarnain
-  - name: Sarah Zulkarnain
+  - name: Basil Zulkarnein
+  - name: Sarah Zulkarnein
     photo: /sarah.jpeg
-  - name: Hima Zulkarnain
+  - name: Hima Zulkarnein
     photo: /hima.jpeg
   - name: Aisyah Samweal
   - name: Ahmad Fathallah
