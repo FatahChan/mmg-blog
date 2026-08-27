@@ -7,7 +7,7 @@ members:
     photo: /muhammad-hakim.webp
   - name: Muhammad Rohim
     photo: /muhammad-rohim.jpg
-  - name: Basil Zulkarnein
+  - name: ENG.Basil Zulkarnein
     photo: /Basil Zulkarnein_20260827_163446_0000.jpg
   - name: Sarah Zulkarnein
     photo: /sarah.jpeg
@@ -21,6 +21,7 @@ members:
   - name: Jamal Ramadan Uma
   - name: Hurin
   - name: Unaysa
+  - name: Didododi
 ---
 We are MMG — a group of Indonesians and other Asians who were born in Egypt and are now students or residents here. What started as a small circle of friends grew into a community where we hang out, celebrate birthdays, share meals, and learn from each other.
 
