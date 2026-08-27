@@ -7,7 +7,9 @@ members:
   - name: Muhammad Rohim
   - name: Basil Zulkarnain
   - name: Sarah Zulkarnain
+    photo: /sarah.jpeg
   - name: Hima Zulkarnain
+    photo: /hima.jpeg
   - name: Aisyah Samweal
   - name: Ahmad Fathallah
     photo: /fatah.jpg
