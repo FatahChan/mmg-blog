@@ -1,0 +1,119 @@
+---
+import { memberInitials, normalizeMemberPhoto } from "@utils/members";
+
+export interface Member {
+  name: string;
+  photo?: string | null;
+}
+
+export interface Props {
+  members: Member[];
+}
+
+const { members } = Astro.props;
+const variants = ["pear", "cyan", "mint"] as const;
+---
+
+<section class="member-grid" aria-label="Members">
+  {
+    members.length > 0 ? (
+      <ul class="member-grid__list">
+        {members.map((member, index) => {
+          const photo = normalizeMemberPhoto(member.photo);
+          const variant = variants[index % variants.length];
+
+          return (
+            <li class="member-card hum-reveal">
+              {photo ? (
+                <img
+                  class="member-avatar member-avatar--photo"
+                  src={photo}
+                  alt=""
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <div
+                  class:list={["member-avatar", `member-avatar--${variant}`]}
+                  aria-hidden="true"
+                >
+                  <span>{memberInitials(member.name)}</span>
+                </div>
+              )}
+              <span class="member-name">{member.name}</span>
+            </li>
+          );
+        })}
+      </ul>
+    ) : (
+      <p class="member-grid__empty">No members listed yet.</p>
+    )
+  }
+</section>
+
+<style>
+  .member-grid {
+    @apply mx-auto mb-28 max-w-3xl px-4;
+  }
+
+  .member-grid__list {
+    @apply grid list-none gap-3 p-0 sm:grid-cols-2;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  }
+
+  .member-grid__empty {
+    @apply text-sm text-skin-base opacity-70;
+  }
+
+  .member-card {
+    @apply flex items-center gap-3 rounded-[var(--radius-card)] border-2 border-transparent p-3;
+    background: var(--color-paper);
+    box-shadow: var(--shadow-card);
+    transition:
+      transform 220ms var(--ease-spring),
+      box-shadow 220ms var(--ease-out);
+  }
+
+  .member-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .member-avatar {
+    @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-sm font-bold;
+    font-family: var(--font-label);
+    color: var(--color-ink);
+    box-shadow: 0 3px 0 0 oklch(20% 0.012 250 / 0.12);
+  }
+
+  .member-avatar--photo {
+    @apply object-cover p-0;
+    background: var(--color-paper-2);
+  }
+
+  .member-avatar--pear {
+    background: var(--color-accent);
+  }
+
+  .member-avatar--cyan {
+    background: oklch(76% 0.14 235);
+    color: var(--color-paper);
+  }
+
+  .member-avatar--mint {
+    background: var(--color-mint);
+  }
+
+  .member-name {
+    @apply font-semibold text-skin-base;
+    font-family: var(--font-display);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .member-card:hover {
+      transform: none;
+    }
+  }
+</style>

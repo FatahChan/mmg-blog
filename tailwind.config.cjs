@@ -54,8 +54,12 @@ module.exports = {
         transparent: "transparent",
       },
       fontFamily: {
-        sans: ["Source Sans 3", "system-ui", "sans-serif"],
-        mono: ["IBM Plex Mono", "monospace"],
+        sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+      },
+      borderRadius: {
+        hum: "20px",
+        pill: "999px",
       },
 
       typography: {

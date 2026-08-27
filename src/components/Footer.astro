@@ -11,24 +11,33 @@ export interface Props {
 }
 
 const { noMarginTop = false } = Astro.props;
+
+const marqueeText =
+  "Hangouts · workshops · birthdays · lectures · knowledge-sharing · Cairo & beyond · ";
 ---
 
-<footer class={`${noMarginTop ? "" : "mt-auto"}`}>
+<footer class={`site-footer ${noMarginTop ? "" : "mt-auto"}`}>
   <Hr noPadding />
+  <div class="footer-marquee" aria-hidden="true">
+    <div class="footer-marquee__track">
+      <span>{marqueeText}</span>
+      <span>{marqueeText}</span>
+    </div>
+  </div>
   <div class="footer-wrapper">
     {hasSocials && <Socials centered />}
     <div class="copyright-wrapper">
-      <span>Mawalid Masr Gang &copy; {currentYear}</span>
+      <span class="mono-label">Mawalid Masr Gang &copy; {currentYear}</span>
     </div>
   </div>
 </footer>
 
 <style>
-  footer {
+  .site-footer {
     @apply w-full;
   }
   .footer-wrapper {
-    @apply flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4;
+    @apply flex flex-col items-center justify-between py-4 sm:flex-row-reverse;
   }
   .link-button {
     @apply my-1 p-2 hover:rotate-6;
@@ -38,8 +47,5 @@ const { noMarginTop = false } = Astro.props;
   }
   .copyright-wrapper {
     @apply my-2 flex flex-col items-center whitespace-nowrap sm:flex-row;
-  }
-  .separator {
-    @apply hidden sm:inline;
   }
 </style>

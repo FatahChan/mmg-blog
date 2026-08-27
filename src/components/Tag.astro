@@ -7,32 +7,63 @@ export interface Props {
 const { tag, size = "sm" } = Astro.props;
 ---
 
-<li
-  class={`inline-block ${
-    size === "sm" ? "my-1 underline-offset-4" : "my-3 mx-1 underline-offset-8"
-  }`}
->
-  <a
-    href={`/tags/${tag}/`}
-    transition:name={tag}
-    class={`${size === "sm" ? "text-sm" : "text-lg"} pr-2 group`}
-  >
+<li class={`tag-item ${size === "sm" ? "tag-item--sm" : "tag-item--lg"}`}>
+  <a href={`/tags/${tag}/`} transition:name={tag} class="tag-link group">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class={`${size === "sm" ? " scale-75" : "scale-110"}`}
+      viewBox="0 0 24 24"
+      width="1em"
+      height="1em"
+      class="tag-icon"
+      aria-hidden="true"
       ><path
         d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z"
       ></path>
     </svg>
-    &nbsp;<span>{tag}</span>
+    <span class="tag-text">{tag}</span>
   </a>
 </li>
 
 <style>
-  a {
-    @apply relative underline decoration-dashed hover:-top-0.5 hover:text-skin-accent focus-visible:p-1;
+  .tag-item {
+    @apply inline-block;
   }
-  a svg {
-    @apply -mr-5 h-6 w-6 scale-95 text-skin-base opacity-80 group-hover:fill-skin-accent;
+
+  .tag-item--sm {
+    @apply my-1;
+  }
+
+  .tag-item--lg {
+    @apply my-2 mx-1;
+  }
+
+  .tag-link {
+    @apply inline-flex items-center gap-1.5 overflow-visible py-0.5
+    hover:text-skin-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+
+  .tag-item--lg .tag-link {
+    @apply text-lg;
+  }
+
+  .tag-item--sm .tag-link {
+    @apply text-sm;
+  }
+
+  .tag-text {
+    @apply underline decoration-dashed underline-offset-4;
+  }
+
+  .tag-item--lg .tag-text {
+    @apply underline-offset-8;
+  }
+
+  .tag-icon {
+    @apply shrink-0 overflow-visible fill-skin-base opacity-80 group-hover:fill-skin-accent;
+    /* ponytail: beat global `svg { h-6 w-6 }` — em size from svg width/height attrs */
+    width: 1em !important;
+    height: 1em !important;
+    min-width: 1em;
+    min-height: 1em;
   }
 </style>

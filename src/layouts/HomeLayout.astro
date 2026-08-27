@@ -26,27 +26,13 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 <Layout>
   <Header />
   <main id="main-content">
-    <section id="hero">
-      <p class="hero-tag">{frontmatter.tagline}</p>
-      <h1>{frontmatter.title}</h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="rss-link"
-        aria-label="rss feed"
-        title="RSS Feed"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon"
-          ><path
-            d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
-          ></path><path
-            d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
-          ></path><circle cx="6" cy="18" r="2"></circle>
-        </svg>
-        <span class="sr-only">RSS Feed</span>
-      </a>
+    <section id="hero" class="hum-reveal">
+      <div class="hero-titles">
+        <p class="hero-tag mono-label">{frontmatter.tagline}</p>
+        <h1>{frontmatter.title}</h1>
+      </div>
 
-      <div class="hero-body prose">
+      <div class="hero-body prose hum-stagger">
         <slot />
       </div>
     </section>
@@ -56,14 +42,21 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     {
       featuredPosts.length > 0 && (
         <>
-          <section id="featured">
-            <h2>Latest</h2>
-            <ul>
-              {featuredPosts.map(({ data, slug }) => (
+          <section
+            id="featured"
+            class="section--band hum-reveal hum-reveal-delay-2"
+          >
+            <h2 class="section-title">
+              <span class="section-index">01</span>
+              <span>Latest</span>
+            </h2>
+            <ul class="post-list">
+              {featuredPosts.map(({ data, slug }, i) => (
                 <Card
                   href={`/posts/${slug}/`}
                   frontmatter={data}
                   secHeading={false}
+                  variant={i % 2 === 0 ? "pear" : "cyan"}
                 />
               ))}
             </ul>
@@ -75,9 +68,12 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
     {
       recentPosts.length > 0 && (
-        <section id="recent-posts">
-          <h2>More posts</h2>
-          <ul>
+        <section id="recent-posts" class="hum-reveal hum-reveal-delay-3">
+          <h2 class="section-title">
+            <span class="section-index">02</span>
+            <span>More posts</span>
+          </h2>
+          <ul class="post-list">
             {recentPosts.map(
               ({ data, slug }, index) =>
                 index < 4 && (
@@ -85,6 +81,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
                     href={`/posts/${slug}/`}
                     frontmatter={data}
                     secHeading={false}
+                    variant={index % 2 === 0 ? "cyan" : "default"}
                   />
                 )
             )}
@@ -93,10 +90,10 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       )
     }
 
-    <div class="all-posts-btn-wrapper">
-      <LinkButton href="/posts/">
+    <div class="all-posts-btn-wrapper hum-reveal hum-reveal-delay-3">
+      <LinkButton href="/posts/" className="btn btn--cyan">
         All posts
-        <svg xmlns="http://www.w3.org/2000/svg"
+        <svg xmlns="http://www.w3.org/2000/svg" class="btn-arrow"
           ><path
             d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
           ></path>
@@ -113,30 +110,52 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     @apply pb-6 pt-8;
   }
   .hero-tag {
-    @apply mb-1 text-sm font-medium uppercase tracking-widest text-skin-accent;
+    @apply mb-1;
   }
-  #hero h1 {
-    @apply my-2 inline-block text-4xl font-bold sm:my-4 sm:text-6xl;
-  }
-  #hero .rss-link {
-    @apply mb-6;
-  }
-  #hero .rss-icon {
-    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+  .hero-titles h1 {
+    @apply my-1 text-4xl font-bold tracking-tight sm:text-6xl;
+    font-family: var(--font-display);
+    overflow-wrap: anywhere;
+    min-width: 0;
   }
   .hero-body {
     @apply prose-p:my-2 prose-p:leading-relaxed;
   }
 
+  .section-title {
+    @apply mb-6 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-2xl font-semibold tracking-tight;
+    font-family: var(--font-display);
+  }
+
+  .section-title .section-index {
+    font-family: var(--font-label);
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-kicker);
+  }
+
+  .section-title .section-index::after {
+    content: "·";
+    margin-left: 0.35em;
+    color: var(--color-ink-2);
+    font-weight: 400;
+  }
+
+  .post-list {
+    @apply list-none pl-0;
+  }
+
   #featured,
   #recent-posts {
-    @apply pb-6 pt-12;
+    @apply pb-6 pt-8;
   }
-  #featured h2,
-  #recent-posts h2 {
-    @apply text-2xl font-semibold tracking-wide;
-  }
+
   .all-posts-btn-wrapper {
-    @apply my-8 text-center;
+    @apply my-10 text-center;
+  }
+
+  .btn-arrow {
+    @apply h-5 w-5 fill-current;
   }
 </style>

@@ -1,0 +1,266 @@
+/* Hum component layer — playful blog chrome */
+
+.btn {
+  --btn-face: var(--color-accent);
+  --btn-ink: var(--color-ink);
+  --btn-edge: var(--color-accent-deep);
+  --btn-cast: oklch(76% 0.2 95 / 0.45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.75rem 1.35rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  border: 0;
+  border-radius: var(--radius-pill);
+  color: var(--btn-ink);
+  background: var(--btn-face);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 0 0 var(--btn-edge), 0 6px 12px -3px var(--btn-cast);
+  transform: translateY(0);
+  transition:
+    transform 140ms var(--ease-out),
+    box-shadow 140ms var(--ease-out),
+    background-color 160ms;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 0 var(--btn-edge), 0 12px 22px -4px var(--btn-cast);
+}
+
+.btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 0 var(--btn-edge), 0 2px 6px -2px var(--btn-cast);
+  transition-duration: 70ms;
+}
+
+.btn:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--btn-edge) 70%, var(--color-focus));
+  outline-offset: 3px;
+}
+
+.btn--cyan {
+  --btn-face: var(--color-accent-2);
+  --btn-edge: oklch(56% 0.18 235);
+  --btn-cast: oklch(56% 0.18 235 / 0.35);
+  color: var(--color-paper);
+}
+
+.hum-card {
+  background: var(--color-paper);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 1.25rem 1.35rem;
+  border: 2px solid oklch(20% 0.012 250 / 0.06);
+  transition:
+    transform 220ms var(--ease-spring),
+    box-shadow 220ms var(--ease-out),
+    background-color 220ms;
+}
+
+.hum-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  background: var(--color-paper-2);
+}
+
+.hum-card--pear {
+  background: oklch(86% 0.18 95 / 0.14);
+}
+
+.hum-card--cyan {
+  background: oklch(66% 0.18 235 / 0.1);
+}
+
+.section--band {
+  background: var(--color-paper-2);
+  border-radius: var(--radius-card);
+  padding-block: 1.5rem;
+  /* ponytail: no negative margin — it pulled the band 4px left vs sibling sections */
+}
+
+.mono-label {
+  font-family: var(--font-label);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-kicker);
+}
+
+.hr-dashed {
+  border: none;
+  border-top: 2px dashed oklch(20% 0.012 250 / 0.18);
+  background: none;
+}
+
+.footer-marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: 0.75rem 0;
+  border-top: 2px dashed oklch(20% 0.012 250 / 0.15);
+  border-bottom: 2px dashed oklch(20% 0.012 250 / 0.15);
+  margin-bottom: 1rem;
+}
+
+.footer-marquee__track {
+  display: flex;
+  gap: 2rem;
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-2);
+  white-space: nowrap;
+  animation: hum-marquee 28s linear infinite;
+}
+
+.footer-marquee__track span {
+  flex-shrink: 0;
+}
+
+@keyframes hum-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hum-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hum-reveal {
+    animation: hum-fade-up 600ms var(--ease-snap) both;
+  }
+
+  .hum-reveal-delay-1 {
+    animation-delay: 80ms;
+  }
+
+  .hum-reveal-delay-2 {
+    animation-delay: 160ms;
+  }
+
+  .hum-reveal-delay-3 {
+    animation-delay: 240ms;
+  }
+
+  .hum-stagger > :where(
+    p,
+    ul,
+    ol,
+    blockquote,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    figure,
+    table,
+    hr,
+    video
+  ) {
+    animation: hum-fade-up 650ms var(--ease-snap) both;
+  }
+
+  .hum-stagger > :nth-child(1) {
+    animation-delay: 70ms;
+  }
+
+  .hum-stagger > :nth-child(2) {
+    animation-delay: 140ms;
+  }
+
+  .hum-stagger > :nth-child(3) {
+    animation-delay: 210ms;
+  }
+
+  .hum-stagger > :nth-child(4) {
+    animation-delay: 280ms;
+  }
+
+  .hum-stagger > :nth-child(5) {
+    animation-delay: 350ms;
+  }
+
+  .hum-stagger > :nth-child(6) {
+    animation-delay: 420ms;
+  }
+
+  .hum-stagger > :nth-child(7) {
+    animation-delay: 490ms;
+  }
+
+  .hum-stagger > :nth-child(8) {
+    animation-delay: 560ms;
+  }
+
+  .hum-stagger > :nth-child(n + 9) {
+    animation-delay: 560ms;
+  }
+
+  .hum-stagger.prose a {
+    transition:
+      color 160ms var(--ease-out),
+      transform 160ms var(--ease-out);
+  }
+
+  .hum-stagger.prose a:hover {
+    transform: translateX(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hum-reveal {
+    animation: none;
+  }
+
+  .hum-stagger > :where(
+    p,
+    ul,
+    ol,
+    blockquote,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    figure,
+    table,
+    hr,
+    video
+  ) {
+    animation: none;
+  }
+
+  .footer-marquee__track {
+    animation: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .hum-card:hover {
+    transform: none;
+  }
+
+  .btn:hover,
+  .btn:active {
+    transform: none;
+  }
+}

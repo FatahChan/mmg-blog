@@ -1,3 +1,6 @@
+@import "./tokens.css";
+@import "./hum.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,20 +8,22 @@
 @layer base {
   :root,
   html[data-theme="light"] {
-    --color-fill: 255, 248, 242;
-    --color-text-base: 38, 32, 28;
-    --color-accent: 180, 45, 55;
-    --color-card: 245, 232, 220;
-    --color-card-muted: 220, 200, 185;
-    --color-border: 230, 215, 200;
+    --color-fill: 252, 248, 237;
+    --color-text-base: 42, 45, 55;
+    --color-accent: 234, 212, 120;
+    --color-card: 245, 240, 228;
+    --color-card-muted: 235, 228, 210;
+    --color-border: 220, 212, 195;
+    --color-link: 72, 130, 200;
   }
   html[data-theme="dark"] {
-    --color-fill: 22, 24, 32;
-    --color-text-base: 245, 238, 230;
-    --color-accent: 220, 165, 75;
+    --color-fill: 28, 30, 38;
+    --color-text-base: 245, 238, 228;
+    --color-accent: 234, 212, 120;
     --color-card: 42, 46, 58;
     --color-card-muted: 58, 64, 80;
     --color-border: 72, 68, 62;
+    --color-link: 120, 175, 230;
   }
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
@@ -28,13 +33,21 @@
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
+  html,
+  body {
+    overflow-x: clip;
+  }
   body {
     @apply flex min-h-[100svh] flex-col bg-skin-fill font-sans text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
+    background: var(--color-paper, rgb(var(--color-fill)));
+    color: var(--color-ink, rgb(var(--color-text-base)));
   }
   section,
   footer {
     @apply mx-auto max-w-3xl px-4;
+    max-width: var(--page-max, 48rem);
+    padding-inline: var(--page-gutter, 1rem);
   }
   a {
     @apply outline-2 outline-offset-1 outline-skin-fill 
@@ -49,8 +62,8 @@
     sm:scale-110;
   }
   .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-skin-base 
-    prose-h3:italic prose-p:!text-skin-base 
+    @apply prose-headings:!mb-3 prose-headings:!text-skin-base prose-headings:font-semibold
+    prose-h3:!italic prose-p:!text-skin-base 
     prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8
     hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent
     prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
@@ -67,10 +80,12 @@
     prose-th:border-skin-line prose-td:border 
     prose-td:border-skin-line prose-img:!my-2 
     prose-img:mx-auto prose-img:border-2 
-    prose-img:border-skin-line prose-hr:!border-skin-line;
+    prose-img:border-skin-line prose-img:rounded-[var(--radius-card)]
+    prose-hr:!border-skin-line;
   }
   .prose a {
     @apply break-words hover:!text-skin-accent;
+    color: rgb(var(--color-link)) !important;
   }
   .prose thead th:first-child,
   tbody td:first-child,
@@ -90,27 +105,22 @@
     @apply hidden;
   }
 
-  /* ===== scrollbar ===== */
   html {
     overflow-y: scroll;
   }
 
-  /* width */
   ::-webkit-scrollbar {
     @apply w-3;
   }
 
-  /* Track */
   ::-webkit-scrollbar-track {
     @apply bg-skin-fill;
   }
 
-  /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-skin-card;
+    @apply bg-skin-card rounded-full;
   }
 
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-skin-card-muted;
   }
@@ -131,5 +141,8 @@
   }
   .focus-outline {
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+  }
+  .text-skin-link {
+    color: rgb(var(--color-link));
   }
 }
