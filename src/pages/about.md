@@ -3,34 +3,24 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
+We are MMG — a group of Indonesians and other Asians who were born in Egypt and are now students or residents here. What started as a small circle of friends grew into a community where we hang out, celebrate birthdays, share meals, and learn from each other.
 
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
+![Salwa and Hima's birthday gathering](@assets/images/salwa-hima-birthday-group-foto.png)
 
-This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
+From casual get-togethers to knowledge-sharing sessions, we do a lot together. This blog is where we document those moments — lectures, workshops, outings, and everything in between.
 
-<div>
-  <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
-</div>
+## Members
 
-## Tech Stack
-
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
-
-## Features
-
-Here are certain features of this site.
-
-- fully responsive and accessible
-- SEO-friendly
-- light & dark mode
-- fuzzy search
-- super fast performance
-- draft posts
-- pagination
-- sitemap & rss feed
-- highly customizable
-
-If you like this theme, you can star/contribute to the [repo](https://github.com/satnaing/astro-paper).  
-Or you can even give any feedback via my [email](mailto:contact@satnaing.dev).
+| Name             | Notes |
+| ---------------- | ----- |
+| Ahmad Fathallah  |       |
+| Basil Zulkarnain |       |
+| Basilo           |       |
+| Hanan            |       |
+| Hima Zul         |       |
+| Hurin            |       |
+| KIM_kun          |       |
+| Muhammad Hakim   |       |
+| Muhammad Rohim   |       |
+| Salwa            |       |
+| + 6 more         |       |
