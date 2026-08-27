@@ -10,6 +10,7 @@ members:
   - name: Hima Zul
   - name: Hurin
   - name: Muhammad Hakim
+  - name: Maryam Hakim
   - name: Muhammad Rohim
   - name: Salwa
   - name: Unaysa
