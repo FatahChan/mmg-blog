@@ -7,7 +7,7 @@ members:
     photo: /muhammad-hakim.webp
   - name: Muhammad Rohim
     photo: /muhammad-rohim.jpg
-  - name: ENG.Basil Zulkarnein
+  - name: ENG. Basil Zulkarnein
     photo: /Basil Zulkarnein_20260827_163446_0000.jpg
   - name: Sarah Zulkarnein
     photo: /sarah.jpeg
@@ -18,7 +18,7 @@ members:
     photo: /fatah.jpg
   - name: Salwa
   - name: Hanan Uma
-  - name: Jamal Ramadan Uma
+  - name: Jamal Uma
   - name: Hurin
   - name: Unaysa
   - name: Diya Awang
