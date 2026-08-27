@@ -1,12 +1,21 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
+import Layout from "./Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import getSortedPosts from "@utils/getSortedPosts";
+
+export interface Props {
+  frontmatter: {
+    tagline: string;
+    title: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
 
 const posts = await getCollection("blog");
 const sortedPosts = getSortedPosts(posts);
@@ -18,8 +27,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <Header />
   <main id="main-content">
     <section id="hero">
-      <p class="hero-tag">Mawalid Masr Gang</p>
-      <h1>MMG</h1>
+      <p class="hero-tag">{frontmatter.tagline}</p>
+      <h1>{frontmatter.title}</h1>
       <a
         target="_blank"
         href="/rss.xml"
@@ -37,22 +46,9 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         <span class="sr-only">RSS Feed</span>
       </a>
 
-      <p>
-        We are Indonesians and other Asians born in Egypt — students and
-        residents who hang out, celebrate together, and share what we know.
-      </p>
-      <p>
-        This site is our scrapbook: workshops, lectures, birthdays, and the
-        everyday moments that keep us connected.
-      </p>
-      <p>
-        <LinkButton
-          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
-          href="/about/"
-        >
-          Meet the group
-        </LinkButton>
-      </p>
+      <div class="hero-body prose">
+        <slot />
+      </div>
     </section>
 
     <Hr />
@@ -128,8 +124,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   #hero .rss-icon {
     @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
   }
-  #hero p {
-    @apply my-2 leading-relaxed;
+  .hero-body {
+    @apply prose-p:my-2 prose-p:leading-relaxed;
   }
 
   #featured,

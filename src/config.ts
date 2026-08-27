@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Ahmad Fathallah",
   desc: "Mawalid Masr Gang — Indonesians and other Asians born in Egypt. Hangouts, celebrations, and knowledge-sharing.",
   title: "MMG",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "/assets/hima-salwa-brithday-group-foto.jpeg",
   lightAndDarkMode: true,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
