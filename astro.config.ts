@@ -9,6 +9,7 @@ import { SITE } from "./src/config";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  output: "static",
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -32,6 +33,9 @@ export default defineConfig({
     },
   },
   vite: {
+    ssr: {
+      external: ["@resvg/resvg-js"],
+    },
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
     },
