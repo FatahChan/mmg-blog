@@ -11,18 +11,17 @@ From casual get-togethers to knowledge-sharing sessions, we do a lot together. T
 ## Members
 
 
-| Name | Notes |
-| ---------------- | ----- |
-| Ahmad Fathallah |  |
-| Basil Zulkarnain |  |
-| Basilo |  |
-| Hanan |  |
-| Hima Zul |  |
-| Hurin |  |
-| KIM_kun |  |
-| Muhammad Hakim |  |
-| Muhammad Rohim |  |
-| Salwa |  |
-| + 6 more |  |
+| Name |
+| ---------------- |
+| Ahmad Fathallah |
+| Basil Zulkarnain |
+| Sarah Zulkarnain |
+| Hanan |
+| Hima Zul |
+| Hurin |
+| Muhammad Hakim |
+| Muhammad Rohim |
+| Salwa |
+| Unaysa |
 
 
