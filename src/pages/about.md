@@ -21,6 +21,7 @@ members:
   - name: Jamal Uma
   - name: Hurin
   - name: Unaysa
+    photo: /unaysaa.jpg
   - name: Diya Awang
     photo: /diya (1).jpg
 ---
