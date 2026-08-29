@@ -13,7 +13,7 @@ members:
     photo: /sarah.jpeg
   - name: Hima Zulkarnein
     photo: /hima.jpeg
-  - name: Aisyah Samweal
+  - name: Aisyah Samwel
   - name: Ahmad Fathallah
     photo: /fatah.jpg
   - name: Salwa
