@@ -1,6 +1,6 @@
 ---
 author: Ahmad Fathallah
-pubDatetime: 2026-09-01T18:00:00Z
+pubDatetime: 2026-09-01T14:00:00Z
 title: Coach Sarah Passes TASS Qualification with A+
 slug: sarah-zulkarnein-tass-qualification
 featured: true
