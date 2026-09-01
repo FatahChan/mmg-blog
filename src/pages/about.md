@@ -20,6 +20,7 @@ members:
   - name: Hanan Uma
   - name: Jamal Uma
   - name: Hurin
+    photo: /hur.jpeg
   - name: Unaysa
     photo: /unaysaa.jpg
   - name: Diya Awang
