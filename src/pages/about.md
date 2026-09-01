@@ -19,6 +19,7 @@ members:
   - name: Salwa
   - name: Hanan Uma
   - name: Jamal Uma
+    photo: /jamal.jpeg
   - name: Hurin
     photo: /hur.jpeg
   - name: Unaysa
